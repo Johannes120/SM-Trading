@@ -51,6 +51,19 @@
             border: 1px solid rgba(255,255,255,0.3);
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
+        
+    .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Space between image and text */
+}
+
+.logo-img {
+    height: 50px; /* Adjust this height to fit your navbar */
+    width: auto;  /* Maintains aspect ratio */
+    border-radius: 8px; /* Optional: rounds the corners slightly */
+    object-fit: contain;
+}
 
         .navbar .logo {
             font-size: 22px;
@@ -289,10 +302,11 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">
-
-            
+         <div class="logo">
+            <img src="logo-image.png" alt="SM Trading Logo" class="logo-img">
+            <span>SM Trading</span>
         </div>
+            
         <div class="nav-links">
             <a href="index.html#services">Home</a>
             <a href="index.html">About</a>
@@ -355,7 +369,10 @@
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
-                
+             <div class="logo">       
+              <img src="logo-image.png" alt="SM Trading Logo" class="logo-img">
+              <span>SM Trading</span>
+            </div>
             </div>
             <div class="footer-bottom">
                 © 2022 SM Trading. All rights reserved.

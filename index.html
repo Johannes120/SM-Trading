@@ -153,13 +153,14 @@
             margin-bottom: 60px;
         }
 
-        .service-grid {
+           .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            /* Changes from auto-fit to a fixed 4-column layout */
+            grid-template-columns: repeat(4, 1fr);
             gap: 40px; 
             max-width: 1200px;
             margin: auto;
-        }
+           }
 
         .service-card {
             background: white;

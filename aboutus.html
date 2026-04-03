@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM Trading | About Us</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root {
+    --primary-dark: #1F4D43;
+    --primary: #2E6B5C;
+    --accent: #CBBFA6;
+    --light: #F5F1E8;
+    --text-dark: #1A1A1A;
+    --text-light: #FFFFFF;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--light);
+    color: var(--text-dark);
+    padding-top: 110px;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    right: 20px;
+    width: calc(100% - 40px);
+    z-index: 1000;
+    background: rgba(203, 191, 166, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.navbar .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Space between image and text */
+}
+
+.logo-img {
+    height: 50px; /* Adjust this height to fit your navbar */
+    width: auto;  /* Maintains aspect ratio */
+    border-radius: 30px; /* Optional: rounds the corners slightly */
+    object-fit: contain;
+}
+
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-dark);
+    font-weight: 500;
+    font-size: 15px;
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 500px;
+    max-width: 1100px;
+    width: calc(100% - 32px);
+    margin: 0 auto 40px auto;
+    background: linear-gradient(135deg, var(--accent), #d8cfbd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 30px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #2f2f2f;
+    line-height: 1.6;
+}
+
+.hero-content button {
+    padding: 12px 24px;
+    background: var(--primary-dark);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.hero-content button:hover {
+    transform: translateY(-2px);
+    background: var(--primary);
+}
+
+/* ABOUT */
+.about {
+    max-width: 900px;
+    width: calc(100% - 32px);
+    margin: 60px auto;
+    padding: 40px 30px;
+    background: var(--primary-dark);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.about img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid var(--accent);
+    object-fit: cover;
+}
+
+.about-text {
+    color: var(--text-light);
+}
+
+.about-text h2 {
+    color: var(--accent);
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 700px;
+}
+
+/* SERVICES */
+.services {
+    padding: 60px 15px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: var(--primary-dark);
+}
+
+.service-grid {
+    display: grid;
+    /* Force 4 equal columns on larger screens */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    max-width: 1000px;
+    width: calc(100% - 10px);
+    margin: auto;
+}
+
+
+.service-card {
+    background: var(--accent);
+    color: var(--primary-dark);
+    padding: 30px 20px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.service-card i {
+    font-size: 32px;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    background-color: rgb(206, 206, 206);
+}
+
+/* CTA */
+.cta {
+    background: var(--primary-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.cta h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.cta p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.cta button {
+    padding: 12px 24px;
+    background: var(--accent);
+    color: var(--primary-dark);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.cta button:hover {
+    transform: translateY(-2px);
+    background-color: #FFFFFF;
+}
+
+/* FOOTER */
+footer {
+    background: #163a32;
+    color: var(--text-light);
+    padding: 30px 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer-logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.footer-bottom {
+    font-size: 13px;
+    opacity: 0.8;
+    flex: 1;
+    text-align: center;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.footer-socials a {
+    color: var(--accent);
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.footer-socials a:hover {
+    color: var(--text-light);
+    transform: translateY(-3px);
+}
+
+/* =========================
+   RESPONSIVE FOR SMARTPHONES
+========================= */
+@media (max-width: 768px) {
+    body {
+        padding-top: 130px;
+    }
+
+    .navbar {
+        padding: 14px 20px;
+        border-radius: 25px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .nav-links {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 420px;
+        width: calc(100% - 24px);
+        padding: 30px 18px;
+        border-radius: 24px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .about {
+        padding: 30px 20px;
+    }
+
+    .about img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .about-text h2 {
+        font-size: 26px;
+    }
+
+    .services h2,
+    .cta h2 {
+        font-size: 28px;
+    }
+
+    
+
+    .service-card {
+        font-size: 16px;
+        padding: 24px 16px;
+    }
+
+    .service-card i {
+        font-size: 28px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo,
+    .footer-bottom,
+    .footer-socials {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 145px;
+    }
+
+    .hero {
+        min-height: 380px;
+        padding: 25px 16px;
+    }
+
+    .hero-content h1 {
+        font-size: 26px;
+    }
+
+        .logo span {
+        display: none;
+    }
+    .logo-img {
+        height: 40px; /* Slightly smaller logo on mobile */
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .hero-content button,
+    .cta button {
+        width: 100%;
+        max-width: 220px;
+    }
+
+    .about-text h2 {
+        font-size: 24px;
+    }
+
+    .about-text p {
+        font-size: 15px;
+    }
+
+    .services h2,
+    .cta h2 {
+        font-size: 24px;
+    }
+
+    .cta p {
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+    <img src="logo-image.jpg" alt="SM Trading Logo" class="logo-img">
+    <span>SM Trading</span>
+    </div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#services">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Reliable Services You Can Trust</h1>
+        <p>From painting to plumbing — SM Trading delivers quality workmanship.</p>
+        <a href="contact.html">
+        <button>Get A Quote</button>
+        </a>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <img 
+      src="about-us.jpg" 
+      alt="My Image"
+    />
+    <div class="about-text">
+        <h2>About SM Trading</h2>
+        <p>
+            At SM Trading, we are committed to delivering reliable, high-quality services tailored to meet the needs of both residential and commercial clients. 
+            With a strong focus on professionalism, customer satisfaction, and attention to detail, we take pride in every project we complete. 
+            Our experienced team is dedicated to providing practical solutions, dependable workmanship, and lasting results you can trust.
+        </p>
+    </div>
+</section>
+
+<section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+        <div class="service-card">
+            <i class="fa-solid fa-paint-roller"></i>
+            <span>Painting</span>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-house-chimney"></i>
+            <span>Roofing</span>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-faucet-drip"></i>
+            <span>Plumbing</span>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-broom"></i>
+            <span>Cleaning</span>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-toilet"></i>
+            <span>Sanitary</span>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>Maintenance</span>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-border-all"></i>
+            <span>Tiling</span>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-hammer"></i>
+            <span>Carpentry</span>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Need Professional Help?</h2>
+    <p>Contact SM Trading today and get a free quote!</p>
+    <a href="contact.html">
+    <button>Contact Us</button>
+    </a>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="logo-image.jpg" alt="SM Trading Logo" class="logo-img">
+            <span>SM Trading</span>
+        </div>
+
+        <div class="footer-bottom">
+            © 2022 SM Trading. All rights reserved.
+        </div>
+
+        <div class="footer-socials">
+            <a href="tel:+27123456789" title="Phone"><i class="fa-solid fa-phone"></i></a>
+            <a href="mailto:info@smtrading.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://wa.me/27123456789" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

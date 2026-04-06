@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformations | SM Trading Carpentry</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* SM TRADING BRAND VARIABLES */
+        :root {
+            --primary-dark: #1F4D43;
+            --primary: #2E6B5C;
+            --accent: #CBBFA6;
+            --light: #F5F1E8;
+            --text-dark: #1A1A1A;
+            --text-light: #FFFFFF;
+            --glass: rgba(203, 191, 166, 0.85);
+            /* Label Colors */
+            --before-red: #bc4b4b;
+            --after-green: #2e7d32;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body {
+            background: var(--light);
+            color: var(--text-dark);
+            padding-top: 140px; /* Space for fixed nav */
+        }
+
+        /* --- NAVIGATION (SM TRADING STYLE) --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: fixed;
+            top: 15px; left: 20px; right: 20px;
+            z-index: 1000;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--primary-dark); font-weight: bold; font-size: 22px; }
+        .logo-img { height: 50px; width: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-dark); }
+
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { text-decoration: none; color: var(--primary-dark); font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- PAGE HEADER --- */
+        .gallery-header {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+        }
+
+        .gallery-header h1 { color: var(--primary-dark); font-size: 42px; margin-bottom: 15px; }
+        .gallery-header p { font-size: 19px; color: #444; line-height: 1.6; }
+
+        /* --- MAIN GALLERY CONTAINER --- */
+        .transformation-container {
+            max-width: 1300px;
+            margin: 0 auto 100px auto;
+            padding: 0 25px;
+        }
+
+        /* --- COMPARISON ROW STRUCTURE --- */
+        .comparison-row {
+            margin-bottom: 80px; /* Space between projects */
+        }
+
+        .project-title {
+            color: var(--primary-dark);
+            font-size: 28px;
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 10px;
+            left: 50%;
+            position: relative;
+            transform: translateX(-50%);
+        }
+
+        .image-pair-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Exactly two columns for Before/After */
+            gap: 30px;
+        }
+
+        /* --- WORK CARD STYLING --- */
+        .work-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative; /* For Status Label positioning */
+        }
+
+        .work-card:hover { 
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+        }
+
+        /* Status Label (Before/After) */
+        .status-label {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .before-label { background-color: var(--before-red); }
+        .after-label { background-color: var(--after-green); }
+
+        /* Image Container */
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 450px; /* Tall height for massive clarity */
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures large high-res images fill space properly */
+            transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .work-card:hover img { transform: scale(1.08); }
+
+        /* Card Text Info */
+        .card-info { padding: 25px; text-align: left; }
+        .card-info h4 { color: var(--primary-dark); font-size: 20px; margin-bottom: 8px; }
+        .card-info p { font-size: 16px; color: #666; line-height: 1.5; }
+
+        /* --- FOOTER (SM TRADING STYLE) --- */
+        footer {
+            background: #163a32;
+            color: var(--text-light);
+            padding: 60px 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-socials { display: flex; gap: 20px; }
+        .footer-socials a {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--accent);
+            width: 50px; height: 50px;
+            display: flex; justify-content: center; align-items: center;
+            border-radius: 50%; border: 1px solid rgba(203, 191, 166, 0.2);
+            transition: 0.3s; font-size: 22px; text-decoration: none;
+        }
+
+        .footer-socials a:hover { background: var(--accent); color: var(--primary-dark); transform: translateY(-5px); }
+
+        /* --- RESPONSIVE ADJUSTMENTS --- */
+        @media (max-width: 900px) { 
+            .image-pair-grid { grid-template-columns: 1fr; gap: 20px; } /* Stack on mobile, but keep pairing */
+            .comparison-row { margin-bottom: 50px; }
+            .image-container { height: 350px; }
+            .gallery-header h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="logo-image.jpg" alt="SM Trading Logo" class="logo-img">
+            <span>SM Trading</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="gallery-header">
+            <h1>Expert Transformations</h1>
+            <p>Seeing is believing. Explore these Before & After showcases highlighting SM Trading's commitment to quality craftsmanship and precise installation.</p>
+        </section>
+
+        <section class="transformation-container">
+
+            <div class="comparison-row">
+                <h3 class="project-title">1. Premium Kitchen Fitting</h3>
+                <div class="image-pair-grid">
+                    
+                    <article class="work-card">
+                        <span class="status-label before-label">Before</span>
+                        <div class="image-container">
+                            <img src="images/kitchen_before.png" alt="Kitchen before renovation">
+                        </div>
+                        <div class="card-info">
+                            <h4>Layout Planning</h4>
+                            <p>Every high-end kitchen begins with a deep assessment of the structural shell. This "before" phase captures the space during the critical planning stage, where we mapped out the electrical points, plumbing lines, and cabinetry footprints. By starting with a completely cleared area, we ensured that the final installation would be seamless, level, and built to last.</p>
+                        </div>
+                    </article>
+
+                    <article class="work-card">
+                        <span class="status-label after-label">After</span>
+                        <div class="image-container">
+                            <img src="images/kitchen_after.png" alt="Kitchen after SM Trading renovation">
+                        </div>
+                        <div class="card-info">
+                            <h4>Modern Culinary Transformation</h4>
+                            <p>We turned a bare, stripped-back kitchen space into a high-impact culinary hub. This project features vibrant red high-gloss cabinetry paired with sleek black countertops and integrated appliance housing. The addition of a custom wine rack and a centralized breakfast nook maximizes both style and utility for the modern home.</p>
+                        </div>
+                    </article>
+                </div>
+            </div> <div class="comparison-row">
+                <h3 class="project-title">2. Custom Wardrobes</h3>
+                <div class="image-pair-grid">
+                    
+                    <article class="work-card">
+                        <span class="status-label before-label">Before</span>
+                        <div class="image-container">
+                            <img src="images/wardrobe_before.png" alt="Bedroom wall before wardrobes">
+                        </div>
+                        <div class="card-info">
+                            <h4>Wasted Wall Space</h4>
+                            <p>An empty, plain bedroom wall providing zero storage utility and disrupting the room’s storing potential.</p>
+                        </div>
+                    </article>
+
+                    <article class="work-card">
+                        <span class="status-label after-label">After</span>
+                        <div class="image-container">
+                            <img src="images/wardrobe_after.png" alt="Bedroom with custom floor-to-ceiling wardrobes">
+                        </div>
+                        <div class="card-info">
+                            <h4>Wall Wardrobe</h4>
+                            <p>Taking a plain, unfinished room and installing custom-fitted wardrobes that provide massive storage without compromising on elegance. These dark mahogany-finished units feature a mix of hanging space, open shelving, and smooth-glide drawers, all precisely measured to fit the room's unique dimensions perfectly. </p>
+                        </div>
+                    </article>
+                </div>
+            </div> <div class="comparison-row">
+                <h3 class="project-title">Designer TV & Media Unit</h3>
+                <div class="image-pair-grid">
+                    
+                    <article class="work-card">
+                        <span class="status-label before-label">Before</span>
+                        <div class="image-container">
+                            <img src="images/entertainment_before.png" alt="Unfinished backyard area">
+                        </div>
+                        <div class="card-info">
+                            <h4>Initial Wall Assessment & Preparation</h4>
+                            <p>Before the installation of our bespoke media center, the living area featured a standard, unutilized wall space. This "before" stage shows the essential structural preparation and cable management planning required to ensure a seamless, floating finish for the final marble and slat-wood design.</p>
+                        </div>
+                    </article>
+
+                    <article class="work-card">
+                        <span class="status-label after-label">After</span>
+                        <div class="image-container">
+                            <img src="images/entertainment_after.jpg" alt="Finished hardwood deck and pergola">
+                        </div>
+                        <div class="card-info">
+                            <h4>Bespoke Marble-Style Entertainment Unit</h4></h4>
+                      <p>This project highlights a sophisticated transformation of a living room wall into a luxurious entertainment center. We installed a floating marble-textured centerpiece against a dark slatted wood backdrop. The unit includes integrated shelving and a sleek, low-profile floating cabinet to keep the living space organized and modern.</p>
+                        </div>
+                    </article>
+                </div>
+            </div> </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="logo">
+                    <img src="logo-image.jpg" alt="SM Trading Logo" class="logo-img" style="height: 40px; width: 40px;">
+                    <span style="color: var(--accent)">SM Trading</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 SM Trading. All rights reserved.
+            </div>
+          <div class="footer-socials">
+            <a href="tel:+27633662077" title="Call Us"><i class="fa-solid fa-phone"></i></a>
+            <a href="mailto:smtradingbt@gmail.com" title="Email Us"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://wa.me/27633662077" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+    </footer>
+
+</body>
+</html>

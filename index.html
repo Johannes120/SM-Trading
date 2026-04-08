@@ -175,6 +175,18 @@
             color: var(--primary);
             margin-bottom: 25px;
         }
+        /* Removes the underline from links inside service cards */
+.service-card a {
+    text-decoration: none;
+    display: block; /* Ensures the entire card area is clickable if the link wraps everything */
+    color: inherit; /* Inherits the color from the parent/span settings */
+}
+
+/* Optional: Ensure the hover effect works smoothly through the link */
+.service-card a:hover {
+    text-decoration: none;
+}
+
 
         .service-card span {
             display: block;
@@ -322,12 +334,12 @@
     <div class="service-grid">
         <div class="service-card"><a href="carpentry.html"><i class="fa-solid fa-hammer"></i><span>Carpentry</span></a></div>
         <div class="service-card"><a href="tiling.html"><i class="fa-solid fa-border-all"></i><span>Tiling</span></a></div>
-        <div class="service-card"><i class="fa-solid fa-paint-roller"></i><span>Painting</span></div>
+        <div class="service-card"><a href="painting.html"><i class="fa-solid fa-paint-roller"></i><span>Painting</span></a></div>
         <div class="service-card"><a href="plumbing.html"><i class="fa-solid fa-faucet-drip"></i><span>Plumbing</span></a></div>
-        <div class="service-card"><i class="fa-solid fa-screwdriver-wrench"></i><span>Maintenance</span></div>
+        <div class="service-card"><a href="maintanance.html"><i class="fa-solid fa-screwdriver-wrench"></i><span>Maintenance</span></a></div>
         <div class="service-card"><a href="roofing.html"><i class="fa-solid fa-house-chimney"></i><span>Roofing</span></a></div>
-        <div class="service-card"><a href="cleaning.html"><i class="fa-solid fa-broom"></i><span>Cleaning</span></div>
-        <div class="service-card"><i class="fa-solid fa-toilet"></i><span>Sanitary</span></div>
+        <div class="service-card"><a href="cleaning.html"><i class="fa-solid fa-broom"></i><span>Cleaning</span></a></div>
+        <div class="service-card"><a href="sanitary.html"><i class="fa-solid fa-toilet"></i><span>Sanitary</span></a></div>
     </div>
 </section>
 

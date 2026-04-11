@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanitary Solutions | SM Trading</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* SM TRADING BRAND VARIABLES */
+        :root {
+            --primary-dark: #1F4D43;
+            --primary: #2E6B5C;
+            --accent: #CBBFA6;
+            --light: #F5F1E8;
+            --text-dark: #1A1A1A;
+            --text-light: #FFFFFF;
+            --glass: rgba(203, 191, 166, 0.85);
+            --tag-bg: #2E6B5C;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body {
+            background: var(--light);
+            color: var(--text-dark);
+            padding-top: 140px;
+        }
+
+        /* --- NAVIGATION --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: fixed;
+            top: 15px; left: 20px; right: 20px;
+            z-index: 1000;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--primary-dark); font-weight: bold; font-size: 22px; }
+        .logo-img { height: 50px; width: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-dark); }
+
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { text-decoration: none; color: var(--primary-dark); font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- PAGE HEADER --- */
+        .gallery-header {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+        }
+
+        .gallery-header h1 { color: var(--primary-dark); font-size: 42px; margin-bottom: 15px; }
+        .gallery-header p { font-size: 19px; color: #444; line-height: 1.6; }
+
+        /* --- PROJECT GRID --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1300px;
+            margin: 0 auto 100px auto;
+            padding: 0 25px;
+        }
+
+        .work-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .work-card:hover { 
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+        }
+
+        .status-tag {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            background-color: var(--tag-bg);
+            z-index: 10;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .work-card:hover img { transform: scale(1.08); }
+
+        .card-info { padding: 30px; text-align: left; }
+        .card-info h4 { color: var(--primary-dark); font-size: 22px; margin-bottom: 12px; }
+        .card-info p { font-size: 16px; color: #555; line-height: 1.6; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #163a32;
+            color: var(--text-light);
+            padding: 60px 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-socials { display: flex; gap: 20px; }
+        .footer-socials a {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--accent);
+            width: 50px; height: 50px;
+            display: flex; justify-content: center; align-items: center;
+            border-radius: 50%; border: 1px solid rgba(203, 191, 166, 0.2);
+            transition: 0.3s; font-size: 22px; text-decoration: none;
+        }
+
+        .footer-socials a:hover { background: var(--accent); color: var(--primary-dark); transform: translateY(-5px); }
+
+        @media (max-width: 768px) { 
+            .project-grid { grid-template-columns: 1fr; }
+            .gallery-header h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="logo-image.png" alt="SM Trading Logo" class="logo-img">
+            <span>SM Trading</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="gallery-header">
+            <h1>Specialized Sanitary Installations</h1>
+            <p>Our comprehensive sanitary services range from hygienic dispenser installations to high-quality waste management solutions, ensuring a clean and professional environment for your facilities.</p>
+        </section>
+
+        <section class="project-grid">
+
+            <article class="work-card">
+                <span class="status-tag">Hand Hygiene</span>
+                <div class="image-container">
+                    <img src="images/hand_soap.png" alt="Hand Soap Dispenser Installation">
+                </div>
+                <div class="card-info">
+                    <h4>Hand Soap Dispensers</h4>
+                    <p>We provide professional installation of wall-mounted hand soap dispensers. These units are designed for durability and ease of use, ensuring consistent hygiene standards in both commercial and public restrooms.</p>
+                </div>
+            </article>
+
+            <article class="work-card">
+                <span class="status-tag">Restroom Care</span>
+                <div class="image-container">
+                    <img src="images/urinal_mats.png" alt="Urinal Mat Placement">
+                </div>
+                <div class="card-info">
+                    <h4>Sanitary Urinal Mats</h4>
+                    <p>Our premium urinal mats are strategically placed to manage odors and maintain cleanliness. These mats are essential for preventing floor damage and ensuring a fresh-smelling environment in high-traffic facilities.</p>
+                </div>
+            </article>
+
+            <article class="work-card">
+                <span class="status-tag">Waste Management</span>
+                <div class="image-container">
+                    <img src="images/shebin.png" alt="Shebin Sanitary Bin Installation">
+                </div>
+                <div class="card-info">
+                    <h4>Shebin Sanitary Bins</h4>
+                    <p>We install and maintain high-quality shebins (feminine hygiene bins). These bins are designed for discreet, hands-free operation and are serviced regularly to ensure the highest levels of workplace sanitation.</p>
+                </div>
+            </article>
+
+            <article class="work-card">
+                <span class="status-tag">Hand Drying</span>
+                <div class="image-container">
+                    <img src="images/paper_towel.png" alt="Paper Towel Dispenser Installation">
+                </div>
+                <div class="card-info">
+                    <h4>Paper Towel Dispensers</h4>
+                    <p>Professional mounting of high-capacity paper towel dispensers. Our installations prioritize accessibility and waste reduction, providing a reliable and hygienic drying solution for all staff and visitors.</p>
+                </div>
+            </article>
+
+            <article class="work-card">
+                <span class="status-tag">Maintenance</span>
+                <div class="image-container">
+                    <img src="images/air_freshner.png" alt="Sanitary hardware mechanism">
+                </div>
+                <div class="card-info">
+                    <h4>Hardware Maintenance</h4>
+                    <p>Routine inspection of dispenser mechanisms to ensure non-clogging and smooth operation. We verify that all internal components of your soap and paper units are functioning at peak performance.</p>
+                </div>
+            </article>
+
+            <article class="work-card">
+                <span class="status-tag">Replenishment</span>
+                <div class="image-container">
+                    <img src="images/floor_cleaning.png" alt="Sanitary consumable replenishment">
+                </div>
+                <div class="card-info">
+                    <h4>Consumable Replenishment</h4>
+                    <p>Part of our sanitary service includes the consistent restocking of soaps and paper products. We ensure your facility never runs out of the essential supplies required for daily hygiene.</p>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="logo">
+                    <img src="logo-image.png" alt="SM Trading Logo" class="logo-img" style="height: 40px; width: 40px;">
+                    <span style="color: var(--accent)">SM Trading</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 SM Trading. All rights reserved.
+            </div>
+            <div class="footer-socials">
+                <a href="tel:+27633662077" title="Call Us"><i class="fa-solid fa-phone"></i></a>
+                <a href="mailto:smtradingbt@gmail.com" title="Email Us"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://wa.me/27633662077" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -13,7 +13,7 @@
             --light: #F5F1E8;
             --text-dark: #1A1A1A;
             --text-light: #FFFFFF;
-            --glass: rgba(203, 191, 166, 0.85);
+            --glass: rgba(203, 191, 166, 0.95); /* Increased opacity for better mobile readability */
         }
 
         * {
@@ -28,7 +28,7 @@
         body {
             background: var(--light);
             color: var(--text-dark);
-            padding-top: 140px; 
+            padding-top: 120px; 
             overflow-x: hidden;
         }
 
@@ -59,13 +59,13 @@
         }
 
         .logo-img {
-            height: 45px;
+            height: 40px;
             border-radius: 30px;
             object-fit: contain;
         }
 
         .logo span {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
             color: var(--primary-dark);
         }
@@ -83,9 +83,17 @@
             transition: 0.3s;
         }
 
-        /* --- HERO BANNER (IMAGE ONLY) --- */
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: var(--primary-dark);
+            cursor: pointer;
+        }
+
+        /* --- HERO BANNER --- */
         .hero-banner {
-            min-height: 700px;
+            min-height: 600px;
             max-width: 1200px;
             width: calc(100% - 40px);
             margin: 0 auto 30px auto; 
@@ -94,12 +102,12 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        /* --- HERO INTRO (TEXT BELOW IMAGE) --- */
+        /* --- HERO INTRO --- */
         .hero-intro {
             display: flex;
             justify-content: center;
             padding: 0 20px;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .intro-card {
@@ -109,18 +117,17 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             max-width: 900px;
             text-align: center;
-            border: 1px solid rgba(0,0,0,0.02);
         }
 
         .intro-card h1 {
-            font-size: 48px;
+            font-size: 42px;
             color: var(--primary-dark);
             margin-bottom: 20px;
             line-height: 1.1;
         }
 
         .intro-card p {
-            font-size: 20px;
+            font-size: 18px;
             color: #444;
             margin-bottom: 35px;
             line-height: 1.6;
@@ -129,93 +136,71 @@
         /* --- STATS --- */
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             max-width: 1100px;
-            margin: 0 auto 100px auto; 
+            margin: 0 auto 60px auto; 
             background: var(--primary-dark);
-            padding: 50px;
+            padding: 40px;
             border-radius: 30px;
             text-align: center;
+            gap: 20px;
         }
 
-        .stat-item h3 { font-size: 36px; color: var(--accent); margin-bottom: 5px; }
-        .stat-item p { color: white; font-weight: 500; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
+        .stat-item h3 { font-size: 32px; color: var(--accent); margin-bottom: 5px; }
+        .stat-item p { color: white; font-weight: 500; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; }
 
         /* --- SERVICES --- */
         .services {
-            padding: 40px 20px 100px 20px;
+            padding: 40px 20px 80px 20px;
             text-align: center;
         }
 
         .services h2 {
-            font-size: 36px;
+            font-size: 32px;
             color: var(--primary-dark);
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
-           .service-grid {
+        .service-grid {
             display: grid;
-            /* Changes from auto-fit to a fixed 4-column layout */
             grid-template-columns: repeat(4, 1fr);
-            gap: 40px; 
+            gap: 25px; 
             max-width: 1200px;
             margin: auto;
-           }
+        }
 
         .service-card {
             background: white;
-            padding: 50px 20px;
-            border-radius: 30px;
-            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 40px 15px;
+            border-radius: 25px;
+            transition: 0.4s ease;
             border: 1px solid rgba(0,0,0,0.03);
         }
 
-        .service-card i {
-            font-size: 45px;
-            color: var(--primary);
-            margin-bottom: 25px;
-        }
-        /* Removes the underline from links inside service cards */
-.service-card a {
-    text-decoration: none;
-    display: block; /* Ensures the entire card area is clickable if the link wraps everything */
-    color: inherit; /* Inherits the color from the parent/span settings */
-}
-
-/* Optional: Ensure the hover effect works smoothly through the link */
-.service-card a:hover {
-    text-decoration: none;
-}
-
-
-        .service-card span {
-            display: block;
-            font-size: 19px;
-            font-weight: 700;
-            color: var(--primary-dark);
-        }
+        .service-card a { text-decoration: none; color: inherit; display: block; }
+        .service-card i { font-size: 40px; color: var(--primary); margin-bottom: 20px; }
+        .service-card span { display: block; font-size: 17px; font-weight: 700; color: var(--primary-dark); }
 
         .service-card:hover {
             background: var(--primary-dark);
-            transform: translateY(-15px);
+            transform: translateY(-10px);
         }
 
         .service-card:hover i, .service-card:hover span { color: var(--accent); }
 
-        /* --- CTA & BUTTONS --- */
+        /* --- CTA --- */
         .cta {
             background: var(--primary-dark);
             color: white;
-            padding: 100px 20px;
+            padding: 80px 20px;
             text-align: center;
-            border-radius: 60px 60px 0 0;
+            border-radius: 50px 50px 0 0;
         }
 
         .btn-main {
-            padding: 18px 45px;
+            padding: 16px 40px;
             background: var(--primary-dark);
             color: white;
-            border: none;
             border-radius: 35px;
             font-weight: 700;
             text-decoration: none;
@@ -223,22 +208,13 @@
             transition: 0.3s ease;
         }
 
-        .btn-main:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .btn-accent {
-            background: var(--accent);
-            color: var(--primary-dark);
-        }
+        .btn-accent { background: var(--accent); color: var(--primary-dark); }
 
         /* --- FOOTER --- */
         footer {
             background: #122b25;
             color: var(--text-light);
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
         .footer-container {
@@ -248,44 +224,65 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 20px;
         }
 
-        .footer-socials {
-            display: flex;
-            flex-direction: row;
-            gap: 15px;
-            align-items: center;
-        }
-
+        .footer-socials { display: flex; gap: 15px; }
         .footer-socials a {
-            width: 50px;
-            height: 50px;
+            width: 45px; height: 45px;
             background: rgba(255,255,255,0.05);
             color: var(--accent);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: 0.3s ease;
-            font-size: 22px;
-            border: 1px solid rgba(203, 191, 166, 0.1);
+            display: flex; justify-content: center; align-items: center;
+            border-radius: 50%; text-decoration: none;
+            font-size: 20px; border: 1px solid rgba(203, 191, 166, 0.1);
         }
 
-        .footer-socials a:hover {
-            background: var(--accent);
-            color: var(--primary-dark);
-            transform: translateY(-5px);
+        /* --- RESPONSIVE QUERIES --- */
+
+        /* Tablets */
+        @media (max-width: 1024px) {
+            .service-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-banner { min-height: 450px; }
         }
 
+        /* Mobile Devices */
         @media (max-width: 768px) {
-            body { padding-top: 160px; }
-            .hero-banner { min-height: 350px; }
-            .intro-card h1 { font-size: 32px; }
-            .intro-card { padding: 40px 20px; }
+            body { padding-top: 100px; }
+
+            .menu-toggle { display: block; }
+
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 30px;
+                border-radius: 30px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                display: none; /* Hidden by default */
+                text-align: center;
+            }
+
+            .nav-links.active { display: flex; }
+
+            .hero-banner { min-height: 300px; border-radius: 25px; }
+            
+            .intro-card h1 { font-size: 28px; }
+            .intro-card p { font-size: 16px; }
+
+            .stats { 
+                grid-template-columns: 1fr; 
+                padding: 30px;
+                margin: 0 20px 40px 20px;
+            }
+
+            .service-grid { grid-template-columns: 1fr; gap: 20px; }
+
             .footer-container { flex-direction: column; text-align: center; }
-            .footer-socials { justify-content: center; }
+            
+            .logo span { font-size: 18px; }
         }
     </style>
 </head>
@@ -296,7 +293,10 @@
         <img src="logo-image.png" alt="Logo" class="logo-img">
         <span>SM Trading</span>
     </a>
-    <div class="nav-links">
+    <div class="menu-toggle" id="mobile-menu">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="nav-links" id="nav-list">
         <a href="#">Home</a>
         <a href="aboutus.html">About</a>
         <a href="#services">Services</a>
@@ -324,7 +324,7 @@
 <section class="hero-intro">
     <div class="intro-card">
         <h1>Crafting Excellence in Every Installation</h1>
-        <p>We transform spaces across South Africa with premium maintenance, carpentry, and tiling services you can rely on. Whether it’s a modern office renovation or a custom home repair, we bring the expertise and tools needed to execute your vision flawlessly. Partner with a local team dedicated to enhancing your property’s value and creative beauty.</p>
+        <p>We transform spaces across South Africa with premium maintenance, carpentry, and tiling services you can rely on.</p>
         <a href="contact.html" class="btn-main">Request Free Quote</a>
     </div>
 </section>
@@ -345,7 +345,6 @@
 
 <section class="cta">
     <h2 style="margin-bottom: 20px;">Ready to transform your space?</h2>
-    <p style="margin-bottom: 40px; opacity: 0.8;">Contact our expert team today for a comprehensive quote and professional advice.</p>
     <a href="contact.html" class="btn-main btn-accent">Get In Touch Now</a>
 </section>
 
@@ -355,18 +354,33 @@
             <img src="logo-image.png" alt="Logo" class="logo-img">
             <span style="color: var(--accent)">SM Trading</span>
         </div>
-        
         <div class="footer-bottom">
-            © 2022 SM Trading & Installation. All rights reserved.
+            © 2022 SM Trading. All rights reserved.
         </div>
-        
         <div class="footer-socials">
-            <a href="tel:+27633662077" title="Call Us"><i class="fa-solid fa-phone"></i></a>
-            <a href="mailto:smtradingbt@gmail.com" title="Email Us"><i class="fa-solid fa-envelope"></i></a>
-            <a href="https://wa.me/27633662077" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="tel:+27633662077"><i class="fa-solid fa-phone"></i></a>
+            <a href="mailto:smtradingbt@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://wa.me/27633662077"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
     </div>
 </footer>
+
+<script>
+    // Logic for Mobile Menu Toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    menuToggle.addEventListener('click', () => {
+        navList.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navList.classList.remove('active');
+        });
+    });
+</script>
 
 </body>
 </html>

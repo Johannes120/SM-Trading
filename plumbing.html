@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,6 +81,7 @@ body {
     font-weight:600;
 }
 
+/* MOBILE MENU */
 .menu-toggle {
     display:none;
     font-size:24px;
@@ -125,6 +127,7 @@ body {
     padding-bottom:10px;
 }
 
+/* GRID */
 .image-pair-grid {
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -139,6 +142,10 @@ body {
     box-shadow:0 10px 25px rgba(0,0,0,0.08);
     transition:0.3s;
     position:relative;
+
+    display:flex;
+    flex-direction:column;
+    height:100%;
 }
 
 .work-card:hover {
@@ -169,8 +176,10 @@ body {
     object-fit:cover;
 }
 
+/* FIXED CONTENT HEIGHT */
 .card-info {
     padding:20px;
+    flex:1;
 }
 
 .card-info h4 {
@@ -180,6 +189,7 @@ body {
 
 .card-info p {
     color:#666;
+    line-height:1.5;
 }
 
 /* FOOTER */
@@ -279,66 +289,86 @@ footer {
 
 <section class="gallery-header">
     <h1>Master Plumbing Solutions</h1>
-    <p>Reliable water systems and precision installations from SM Trading.</p>
+    <p>Reliable water systems and precision installations. SM Trading delivers professional plumbing services built for durability and efficiency.</p>
 </section>
 
 <section class="transformation-container">
 
     <!-- PROJECT 1 -->
     <div class="comparison-row">
-        <h3 class="project-title">1. Sanitary Installation</h3>
+        <h3 class="project-title">1. Sanitary Ware Installation</h3>
 
         <div class="image-pair-grid">
+
             <article class="work-card">
-                <span class="status-label before-label">Before</span>
+                <span class="status-label before-label">Preparation</span>
                 <div class="image-container">
                     <img src="images/bathroom_before.jpg">
                 </div>
                 <div class="card-info">
-                    <h4>Preparation</h4>
-                    <p>Planning layout and structure for durability.</p>
+                    <h4>Space Optimization & Planning</h4>
+                    <p>
+                        This phase focuses on strategic layout planning and structural preparation. 
+                        We reinforced wall sections and mapped plumbing routes to ensure long-term 
+                        durability and perfect alignment for wall-mounted fixtures.
+                    </p>
                 </div>
             </article>
 
             <article class="work-card">
-                <span class="status-label after-label">After</span>
+                <span class="status-label after-label">Completed</span>
                 <div class="image-container">
                     <img src="images/bathroom_after.jpg">
                 </div>
                 <div class="card-info">
-                    <h4>Final Installation</h4>
-                    <p>Modern fixtures with clean finishes.</p>
+                    <h4>Modern Fixture Installation</h4>
+                    <p>
+                        The final installation showcases high-efficiency sanitary fittings with 
+                        seamless sealing. The design combines functionality with modern aesthetics 
+                        while incorporating water-saving technologies.
+                    </p>
                 </div>
             </article>
+
         </div>
     </div>
 
     <!-- PROJECT 2 -->
     <div class="comparison-row">
-        <h3 class="project-title">2. Drainage Systems</h3>
+        <h3 class="project-title">2. Drainage & Waste Systems</h3>
 
         <div class="image-pair-grid">
+
             <article class="work-card">
-                <span class="status-label before-label">Before</span>
+                <span class="status-label before-label">Site Work</span>
                 <div class="image-container">
                     <img src="images/tap_before.jpg">
                 </div>
                 <div class="card-info">
-                    <h4>Pipe Installation</h4>
-                    <p>High-quality piping setup.</p>
+                    <h4>Structural Plumbing Installation</h4>
+                    <p>
+                        We installed high-grade PVC drainage lines with precise slope calculations 
+                        to ensure efficient water flow. This stage is critical for preventing 
+                        future blockages and ensuring long-term system performance.
+                    </p>
                 </div>
             </article>
 
             <article class="work-card">
-                <span class="status-label after-label">After</span>
+                <span class="status-label after-label">Finalized</span>
                 <div class="image-container">
                     <img src="images/tap_after.jpg">
                 </div>
                 <div class="card-info">
-                    <h4>Completed System</h4>
-                    <p>Reliable and durable drainage system.</p>
+                    <h4>Durable External Drainage Solution</h4>
+                    <p>
+                        The completed system is securely installed, backfilled, and tested for 
+                        reliability. Designed to withstand environmental pressure, it ensures 
+                        consistent performance and long-lasting durability.
+                    </p>
                 </div>
             </article>
+
         </div>
     </div>
 

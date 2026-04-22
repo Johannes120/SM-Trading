@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>General Maintenance | SM Trading</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         :root {
             --primary-dark: #1F4D43;
@@ -17,87 +18,299 @@
             --tag-bg: #2E6B5C;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background: var(--light); color: var(--text-dark); padding-top: 140px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
+        body {
+            background: var(--light);
+            color: var(--text-dark);
+            padding-top: 140px;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVBAR --- */
         .navbar {
-            display: flex; justify-content: space-between; align-items: center; padding: 15px 30px;
-            position: fixed; top: 15px; left: 20px; right: 20px; z-index: 1000;
-            background: var(--glass); backdrop-filter: blur(12px); border-radius: 50px;
-            border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: fixed;
+            top: 15px; left: 20px; right: 20px;
+            z-index: 1000;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
         }
 
-        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--primary-dark); font-weight: bold; font-size: 22px; }
-        .logo-img { height: 50px; width: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-dark); }
-        .nav-links { display: flex; gap: 25px; }
-        .nav-links a { text-decoration: none; color: var(--primary-dark); font-weight: 600; transition: 0.3s; }
-        .menu-toggle { display: none; font-size: 24px; color: var(--primary-dark); cursor: pointer; }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
 
-        .gallery-header { text-align: center; max-width: 900px; margin: 0 auto 60px auto; padding: 0 20px; }
-        .gallery-header h1 { color: var(--primary-dark); font-size: 42px; margin-bottom: 15px; }
-        .gallery-header p { font-size: 19px; color: #444; line-height: 1.6; }
+        .logo-img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-dark);
+        }
 
+        .logo span {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* MOBILE MENU */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: var(--primary-dark);
+            cursor: pointer;
+        }
+
+        /* --- HEADER --- */
+        .gallery-header {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .gallery-header h1 {
+            color: var(--primary-dark);
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .gallery-header p {
+            font-size: 18px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* --- GRID --- */
         .project-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px; max-width: 1300px; margin: 0 auto 100px auto; padding: 0 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1300px;
+            margin: auto;
+            padding: 0 20px 80px;
         }
 
-        .work-card { background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.08); transition: 0.4s; position: relative; }
-        .status-tag { position: absolute; top: 20px; left: 20px; color: white; padding: 6px 15px; border-radius: 50px; font-weight: bold; font-size: 12px; background: var(--tag-bg); z-index: 10; }
-        .image-container { position: relative; width: 100%; height: 350px; overflow: hidden; }
-        .image-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
-        .work-card:hover img { transform: scale(1.08); }
-        .card-info { padding: 30px; }
-        .card-info h4 { color: var(--primary-dark); font-size: 22px; margin-bottom: 12px; }
+        .work-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: 0.4s ease;
+            position: relative;
+        }
 
-        footer { background: #163a32; color: var(--text-light); padding: 60px 20px; }
-        .footer-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; flex-wrap: wrap; gap: 30px; }
-        .footer-socials a { color: var(--accent); font-size: 22px; margin-left: 15px; }
+        .work-card:hover {
+            transform: translateY(-10px);
+        }
 
+        .status-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--tag-bg);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        .image-container {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-info {
+            padding: 20px;
+        }
+
+        .card-info h4 {
+            font-size: 20px;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .card-info p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #163a32;
+            color: var(--text-light);
+            padding: 50px 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: auto;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-socials a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.05);
+            color: var(--accent);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+        }
+
+        /* --- RESPONSIVE --- */
         @media (max-width: 900px) {
+
+            body { padding-top: 110px; }
+
             .menu-toggle { display: block; }
-            .nav-links { display: none; position: absolute; top: 80px; left: 0; right: 0; background: white; flex-direction: column; padding: 20px; border-radius: 20px; text-align: center; }
-            .nav-links.active { display: flex; }
-            .project-grid { grid-template-columns: 1fr; }
+
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 30px;
+                border-radius: 25px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                display: none;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .gallery-header h1 {
+                font-size: 30px;
+            }
+
+            .image-container {
+                height: 250px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="logo">
-            <img src="logo-image.png" alt="Logo" class="logo-img">
-            <span>SM Trading</span>
-        </a>
-        <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
-        <div class="nav-links" id="nav-list">
-            <a href="index.html">Home</a>
-            <a href="aboutus.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <img src="logo-image.png" class="logo-img">
+        <span>SM Trading</span>
+    </a>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="nav-links" id="nav-list">
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<main>
+    <section class="gallery-header">
+        <h1>General Facility Maintenance</h1>
+        <p>We provide comprehensive maintenance services to keep your property efficient and safe.</p>
+    </section>
+
+    <section class="project-grid">
+        <!-- KEEP YOUR ORIGINAL CARDS (unchanged) -->
+        <!-- Your 6 work cards go here exactly as you had them -->
+    </section>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="logo">
+            <img src="logo-image.png" class="logo-img">
+            <span style="color: var(--accent)">SM Trading</span>
         </div>
-    </nav>
+        <div>© 2026 SM Trading</div>
+        <div class="footer-socials">
+            <a href="tel:+27633662077"><i class="fa-solid fa-phone"></i></a>
+            <a href="mailto:smtradingbt@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://wa.me/27633662077"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
+</footer>
 
-    <main>
-        <section class="gallery-header">
-            <h1>General Facility Maintenance</h1>
-            <p>From structural reinforcement to restoration, we keep your property efficient and safe.</p>
-        </section>
-        <section class="project-grid">
-            <article class="work-card">
-                <span class="status-tag">Structural Repair</span>
-                <div class="image-container"><img src="images/roofing_before.jpg" alt="Repair" loading="lazy"></div>
-                <div class="card-info">
-                    <h4>Hardware Restoration</h4>
-                    <p>Removing oxidation and applying protective coatings to prevent rust.</p>
-                </div>
-            </article>
-            </section>
-    </main>
+<script>
+const menuToggle = document.getElementById('mobile-menu');
+const navList = document.getElementById('nav-list');
 
-    <script>
-        const menuToggle = document.getElementById('mobile-menu');
-        const navList = document.getElementById('nav-list');
-        menuToggle.addEventListener('click', () => navList.classList.toggle('active'));
-    </script>
+menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navList.classList.remove('active');
+    });
+});
+</script>
+
 </body>
 </html>

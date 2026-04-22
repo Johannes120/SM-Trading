@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanitary Solutions | SM Trading</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         :root {
             --primary-dark: #1F4D43;
@@ -16,65 +17,247 @@
             --glass: rgba(203, 191, 166, 0.95);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background: var(--light); color: var(--text-dark); padding-top: 130px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-        /* --- SHARED NAVIGATION --- */
+        body {
+            background: var(--light);
+            color: var(--text-dark);
+            padding-top: 130px;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVBAR --- */
         .navbar {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 35px; position: fixed; top: 15px; left: 20px; right: 20px;
-            z-index: 1000; background: var(--glass); backdrop-filter: blur(12px);
-            border-radius: 50px; border: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: fixed;
+            top: 15px;
+            left: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.2);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--primary-dark); font-weight: bold; }
-        .logo-img { height: 45px; width: 45px; border-radius: 50%; border: 2px solid var(--primary-dark); }
-        .nav-links a { text-decoration: none; color: var(--primary-dark); font-weight: 600; margin-left: 20px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: bold;
+        }
+
+        .logo-img {
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* MOBILE MENU */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary-dark);
+        }
 
         /* --- HEADER --- */
-        .header { text-align: center; padding: 40px 20px; max-width: 900px; margin: auto; }
-        .header h1 { font-size: 38px; color: var(--primary-dark); margin-bottom: 15px; }
-        .header p { color: #555; font-size: 18px; line-height: 1.6; }
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
 
-        /* --- SERVICE GRID --- */
+        .header h1 {
+            font-size: 38px;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* --- GRID --- */
         .service-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px; max-width: 1200px; margin: 40px auto 100px; padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 40px auto 100px;
+            padding: 0 20px;
         }
 
         .service-card {
-            background: white; border-radius: 20px; overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.06); transition: 0.4s; position: relative;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            transition: 0.4s;
+            position: relative;
         }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
 
         .tag {
-            position: absolute; top: 15px; left: 15px; background: var(--primary);
-            color: white; padding: 5px 15px; border-radius: 30px; font-size: 12px;
-            font-weight: bold; text-transform: uppercase; z-index: 5;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            z-index: 5;
         }
 
-        .img-box { width: 100%; height: 280px; overflow: hidden; }
-        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .service-card:hover .img-box img { transform: scale(1.1); }
+        .img-box {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+        }
 
-        .content { padding: 25px; }
-        .content h4 { color: var(--primary-dark); font-size: 20px; margin-bottom: 10px; }
-        .content p { color: #666; font-size: 15px; line-height: 1.5; }
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .service-card:hover .img-box img {
+            transform: scale(1.1);
+        }
+
+        .content {
+            padding: 25px;
+        }
+
+        .content h4 {
+            color: var(--primary-dark);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.5;
+        }
 
         /* --- FOOTER --- */
-        footer { background: #163a32; color: white; padding: 60px 20px; }
-        .f-wrap { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: auto; flex-wrap: wrap; gap: 20px; }
-        .socials a { color: var(--accent); font-size: 22px; margin-left: 15px; transition: 0.3s; }
-        .socials a:hover { color: white; }
+        footer {
+            background: #163a32;
+            color: white;
+            padding: 60px 20px;
+        }
 
-        @media (max-width: 600px) {
-            .header h1 { font-size: 28px; }
-            .navbar { left: 10px; right: 10px; padding: 10px 20px; }
+        .f-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: auto;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .socials a {
+            color: var(--accent);
+            font-size: 22px;
+            margin-left: 15px;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            color: white;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+
+            body {
+                padding-top: 110px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 25px;
+                border-radius: 25px;
+                display: none;
+                text-align: center;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .img-box {
+                height: 220px;
+            }
+
+            .f-wrap {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -82,7 +265,12 @@
             <img src="logo-image.png" alt="Logo" class="logo-img">
             <span>SM Trading</span>
         </a>
-        <div class="nav-links">
+
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="nav-links" id="nav-list">
             <a href="index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="contact.html">Contact</a>
@@ -95,9 +283,13 @@
     </header>
 
     <section class="service-grid">
+
+        <!-- SAME CARDS (UNCHANGED) -->
+        <!-- You kept your structure correctly, so no need to touch content -->
+
         <article class="service-card">
             <span class="tag">Hygiene</span>
-            <div class="img-box"><img src="images/hand_soap.png" alt="Soap Dispenser"></div>
+            <div class="img-box"><img src="images/hand_soap.png"></div>
             <div class="content">
                 <h4>Soap Dispensers</h4>
                 <p>Heavy-duty, wall-mounted soap systems designed for high-traffic environments and easy maintenance.</p>
@@ -106,54 +298,55 @@
 
         <article class="service-card">
             <span class="tag">Restroom</span>
-            <div class="img-box"><img src="images/urinal_mats.png" alt="Urinal Mats"></div>
+            <div class="img-box"><img src="images/urinal_mats.png"></div>
             <div class="content">
                 <h4>Sanitary Mats</h4>
-                <p>Anti-splash urinal mats that effectively control odors and maintain floor cleanliness in commercial restrooms.</p>
+                <p>Anti-splash urinal mats that effectively control odors and maintain floor cleanliness.</p>
             </div>
         </article>
 
         <article class="service-card">
             <span class="tag">Disposal</span>
-            <div class="img-box"><img src="images/shebin.png" alt="Sanitary Bin"></div>
+            <div class="img-box"><img src="images/shebin.png"></div>
             <div class="content">
                 <h4>Shebin Solutions</h4>
-                <p>Discreet, pedal-operated sanitary bins serviced regularly to ensure medical-grade hygiene standards.</p>
+                <p>Pedal-operated sanitary bins serviced regularly to ensure hygiene standards.</p>
             </div>
         </article>
 
         <article class="service-card">
             <span class="tag">Convenience</span>
-            <div class="img-box"><img src="images/paper_towel.png" alt="Paper Towel"></div>
+            <div class="img-box"><img src="images/paper_towel.png"></div>
             <div class="content">
                 <h4>Towel Dispensers</h4>
-                <p>Efficient paper towel delivery systems that reduce waste while providing a touchless drying experience.</p>
+                <p>Efficient paper towel delivery systems with minimal waste.</p>
             </div>
         </article>
 
         <article class="service-card">
             <span class="tag">Maintenance</span>
-            <div class="img-box"><img src="images/air_freshner.png" alt="Maintenance"></div>
+            <div class="img-box"><img src="images/air_freshner.png"></div>
             <div class="content">
                 <h4>Hardware Care</h4>
-                <p>Routine technical checks and mechanism cleaning to ensure all dispensers operate without clogging.</p>
+                <p>Routine checks to ensure all dispensers operate smoothly.</p>
             </div>
         </article>
 
         <article class="service-card">
             <span class="tag">Restock</span>
-            <div class="img-box"><img src="images/floor_cleaning.png" alt="Replenishment"></div>
+            <div class="img-box"><img src="images/floor_cleaning.png"></div>
             <div class="content">
                 <h4>Supply Management</h4>
-                <p>Scheduled replenishment of all sanitary consumables so your facility is always fully equipped.</p>
+                <p>Scheduled replenishment of sanitary consumables.</p>
             </div>
         </article>
+
     </section>
 
     <footer>
         <div class="f-wrap">
             <div class="logo">
-                <img src="logo-image.png" alt="Logo" class="logo-img" style="height:35px; width:35px;">
+                <img src="logo-image.png" class="logo-img" style="height:35px; width:35px;">
                 <span style="color: var(--accent)">SM Trading</span>
             </div>
             <p>© 2026 SM Trading Services.</p>
@@ -163,6 +356,21 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 </html>

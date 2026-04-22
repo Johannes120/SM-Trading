@@ -1,76 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roofing & Ceiling | SM Trading</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        :root {
-            --primary-dark: #1F4D43; --primary: #2E6B5C; --accent: #CBBFA6;
-            --light: #F5F1E8; --glass: rgba(203, 191, 166, 0.95);
-            --before-red: #bc4b4b; --after-green: #2e7d32;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background: var(--light); padding-top: 140px; }
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; position: fixed; top: 15px; left: 20px; right: 20px; z-index: 1000; background: var(--glass); backdrop-filter: blur(12px); border-radius: 50px; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
-        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--primary-dark); font-weight: bold; font-size: 22px; }
-        .logo-img { height: 50px; width: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-dark); }
-        .nav-links { display: flex; gap: 25px; }
-        .menu-toggle { display: none; font-size: 24px; color: var(--primary-dark); cursor: pointer; }
-        .transformation-container { max-width: 1300px; margin: 0 auto; padding: 0 25px; }
-        .image-pair-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .work-card { background: white; border-radius: 25px; overflow: hidden; position: relative; }
-        .status-label { position: absolute; top: 20px; left: 20px; color: white; padding: 8px 20px; border-radius: 50px; z-index: 10; }
-        .before-label { background: var(--before-red); }
-        .after-label { background: var(--after-green); }
-        .image-container { height: 450px; }
-        .image-container img { width: 100%; height: 100%; object-fit: cover; }
-        @media (max-width: 900px) { .menu-toggle { display: block; } .nav-links { display: none; position: absolute; top: 80px; left: 0; right: 0; background: white; flex-direction: column; padding: 20px; border-radius: 20px; } .nav-links.active { display: flex; } .image-pair-grid { grid-template-columns: 1fr; } .image-container { height: 350px; } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roofing & Tiling | SM Trading Services</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root {
+    --primary-dark: #1F4D43;
+    --primary: #2E6B5C;
+    --accent: #CBBFA6;
+    --light: #F5F1E8;
+    --text-dark: #1A1A1A;
+    --text-light: #FFFFFF;
+    --glass: rgba(203, 191, 166, 0.9);
+    --before-red: #bc4b4b;
+    --after-green: #2e7d32;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    background:var(--light);
+    color:var(--text-dark);
+    padding-top:120px;
+    overflow-x:hidden;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 25px;
+    position:fixed;
+    top:15px;
+    left:20px;
+    right:20px;
+    z-index:1000;
+    background:var(--glass);
+    backdrop-filter:blur(12px);
+    border-radius:50px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:var(--primary-dark);
+    font-weight:bold;
+}
+
+.logo-img{
+    height:40px;
+    width:40px;
+    border-radius:50%;
+}
+
+/* NAV LINKS */
+.nav-links{
+    display:flex;
+    gap:20px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--primary-dark);
+    font-weight:600;
+}
+
+/* MOBILE MENU BUTTON */
+.menu-toggle{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* ===== HEADER ===== */
+.gallery-header{
+    text-align:center;
+    max-width:900px;
+    margin:0 auto 50px;
+    padding:0 20px;
+}
+
+.gallery-header h1{
+    font-size:clamp(28px,5vw,42px);
+    margin-bottom:15px;
+}
+
+.gallery-header p{
+    font-size:16px;
+    color:#555;
+}
+
+/* ===== CONTENT ===== */
+.transformation-container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 20px;
+}
+
+.project-title{
+    text-align:center;
+    margin-bottom:20px;
+    color:var(--primary-dark);
+}
+
+.image-pair-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+/* CARD */
+.work-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.work-card:hover{
+    transform:translateY(-5px);
+}
+
+.image-container{
+    height:400px;
+}
+
+.image-container img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* LABELS */
+.status-label{
+    position:absolute;
+    top:15px;
+    left:15px;
+    padding:5px 12px;
+    color:white;
+    border-radius:20px;
+    font-size:12px;
+}
+
+.before-label{ background:var(--before-red); }
+.after-label{ background:var(--after-green); }
+
+.card-info{
+    padding:20px;
+}
+
+.card-info h4{
+    margin-bottom:8px;
+}
+
+.card-info p{
+    font-size:14px;
+    color:#666;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:#163a32;
+    color:white;
+    padding:40px 20px;
+    margin-top:50px;
+}
+
+.footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.footer-socials{
+    display:flex;
+    gap:10px;
+}
+
+.footer-socials a{
+    width:40px;
+    height:40px;
+    background:rgba(255,255,255,0.1);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    color:var(--accent);
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* TABLET */
+@media(max-width:900px){
+    .image-pair-grid{
+        grid-template-columns:1fr;
+    }
+
+    .image-container{
+        height:300px;
+    }
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    body{
+        padding-top:100px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:80px;
+        left:0;
+        right:0;
+        background:white;
+        flex-direction:column;
+        padding:20px;
+        border-radius:20px;
+        display:none;
+        text-align:center;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .gallery-header h1{
+        font-size:26px;
+    }
+
+    .image-container{
+        height:250px;
+    }
+
+    .footer-container{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+</style>
 </head>
+
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="logo">
-            <img src="logo-image.png" alt="Logo" class="logo-img">
-            <span>SM Trading</span>
-        </a>
-        <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
-        <div class="nav-links" id="nav-list">
-            <a href="index.html">Home</a>
-            <a href="aboutus.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
 
-    <main>
-        <section class="gallery-header" style="text-align: center; margin-bottom: 50px;">
-            <h1>Expert Roofing & Ceiling</h1>
-            <p>Elegant interior bulkheads and durable exterior roofing restorations.</p>
-        </section>
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <img src="logo-image.png" class="logo-img">
+        <span>SM Trading</span>
+    </a>
 
-        <section class="transformation-container">
-            <div class="comparison-row">
-                <h3 style="text-align:center; margin-bottom:20px; color:var(--primary-dark);">1. Premium Ceiling Design</h3>
-                <div class="image-pair-grid">
-                    <article class="work-card">
-                        <span class="status-label before-label">In Progress</span>
-                        <div class="image-container"><img src="images/celing_before.jpg" alt="Ceiling Framework" loading="lazy"></div>
-                    </article>
-                    <article class="work-card">
-                        <span class="status-label after-label">After</span>
-                        <div class="image-container"><img src="images/celing_after.jpg" alt="Finished Bulkhead" loading="lazy"></div>
-                    </article>
-                </div>
+    <div class="menu-toggle" id="menuBtn">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<main>
+<section class="gallery-header">
+    <h1>Expert Roofing & Ceiling</h1>
+    <p>Professional roofing and ceiling solutions built for durability and beauty.</p>
+</section>
+
+<section class="transformation-container">
+    <h3 class="project-title">Roof Restoration</h3>
+
+    <div class="image-pair-grid">
+        <div class="work-card">
+            <div class="image-container">
+                <img src="images/roofing_before.jpg">
             </div>
-        </section>
-    </main>
+            <div class="card-info">
+                <h4>Before</h4>
+                <p>Old worn roof condition.</p>
+            </div>
+        </div>
 
-    <script>
-        const menuToggle = document.getElementById('mobile-menu');
-        const navList = document.getElementById('nav-list');
-        menuToggle.addEventListener('click', () => navList.classList.toggle('active'));
-    </script>
+        <div class="work-card">
+            <div class="image-container">
+                <img src="images/roofing_after.jpg">
+            </div>
+            <div class="card-info">
+                <h4>After</h4>
+                <p>Fully restored and protected roofing.</p>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer>
+<div class="footer-container">
+    <p>© 2026 SM Trading</p>
+
+    <div class="footer-socials">
+        <a href="#"><i class="fa-solid fa-phone"></i></a>
+        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+</div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
+
 </body>
 </html>

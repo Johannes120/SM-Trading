@@ -24,50 +24,51 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI', Roboto, Arial;
+    font-family:'Segoe UI', sans-serif;
 }
 
 body {
     background: var(--light);
     color: var(--text-dark);
-    padding-top: 120px;
-    line-height: 1.6;
+    padding-top: 140px;
+    overflow-x: hidden;
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 .navbar {
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:15px 30px;
     position:fixed;
-    top:15px;
-    left:20px;
-    right:20px;
+    top:15px; left:20px; right:20px;
     z-index:1000;
-    background:var(--glass);
-    backdrop-filter:blur(12px);
+    background: var(--glass);
+    backdrop-filter: blur(12px);
     border-radius:50px;
     border:1px solid rgba(255,255,255,0.3);
-    box-shadow:0 8px 32px rgba(0,0,0,0.15);
 }
 
 .logo {
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:12px;
     text-decoration:none;
-    color:var(--primary-dark);
-    font-weight:bold;
 }
 
 .logo-img {
-    width:40px;
     height:40px;
+    width:40px;
     border-radius:50%;
+    object-fit:cover;
 }
 
-/* NAV LINKS */
+.logo span {
+    font-size:20px;
+    font-weight:700;
+    color: var(--primary-dark);
+}
+
 .nav-links {
     display:flex;
     gap:25px;
@@ -75,49 +76,53 @@ body {
 
 .nav-links a {
     text-decoration:none;
-    color:var(--primary-dark);
+    color: var(--primary-dark);
     font-weight:600;
 }
 
-/* MOBILE MENU */
 .menu-toggle {
     display:none;
     font-size:24px;
     cursor:pointer;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 .gallery-header {
     text-align:center;
-    max-width:800px;
-    margin:40px auto 60px;
+    max-width:900px;
+    margin:0 auto 60px;
     padding:0 20px;
 }
 
 .gallery-header h1 {
-    font-size:clamp(28px,5vw,48px);
-    color:var(--primary-dark);
+    font-size:42px;
+    color: var(--primary-dark);
 }
 
 .gallery-header p {
-    color:#555;
+    color:#444;
+    font-size:18px;
 }
 
-/* ===== GALLERY ===== */
+/* CONTAINER */
 .transformation-container {
     max-width:1200px;
     margin:auto;
-    padding:0 20px;
+    padding:0 20px 80px;
 }
 
 .comparison-row {
-    margin-bottom:80px;
+    margin-bottom:70px;
 }
 
 .project-title {
     text-align:center;
-    margin-bottom:30px;
-    font-size:22px;
+    font-size:26px;
+    color: var(--primary-dark);
+    margin-bottom:25px;
+    border-bottom:3px solid var(--accent);
+    display:inline-block;
+    padding-bottom:10px;
 }
 
 .image-pair-grid {
@@ -126,21 +131,36 @@ body {
     gap:25px;
 }
 
+/* CARDS */
 .work-card {
-    background:#fff;
+    background:white;
     border-radius:20px;
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
     transition:0.3s;
+    position:relative;
 }
 
 .work-card:hover {
-    transform:translateY(-5px);
+    transform:translateY(-8px);
 }
+
+.status-label {
+    position:absolute;
+    top:15px;
+    left:15px;
+    padding:6px 15px;
+    border-radius:20px;
+    color:white;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.before-label { background: var(--before-red); }
+.after-label { background: var(--after-green); }
 
 .image-container {
     height:350px;
-    overflow:hidden;
 }
 
 .image-container img {
@@ -149,42 +169,54 @@ body {
     object-fit:cover;
 }
 
-.status-label {
-    position:absolute;
-    top:15px;
-    left:15px;
-    color:white;
-    padding:5px 12px;
-    border-radius:20px;
-    font-size:12px;
-}
-
-.before-label { background:var(--before-red); }
-.after-label { background:var(--after-green); }
-
 .card-info {
     padding:20px;
 }
 
-/* ===== FOOTER ===== */
+.card-info h4 {
+    color: var(--primary-dark);
+    margin-bottom:10px;
+}
+
+.card-info p {
+    color:#666;
+}
+
+/* FOOTER */
 footer {
     background:#163a32;
     color:white;
-    padding:40px 20px;
+    padding:50px 20px;
 }
 
 .footer-container {
     display:flex;
     justify-content:space-between;
-    align-items:center;
     flex-wrap:wrap;
     gap:20px;
+    align-items:center;
 }
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
+.footer-socials {
+    display:flex;
+    gap:15px;
+}
 
-    body { padding-top:100px; }
+.footer-socials a {
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,0.1);
+    color:var(--accent);
+}
+
+/* MOBILE */
+@media (max-width:900px){
+
+    body { padding-top:110px; }
 
     .menu-toggle { display:block; }
 
@@ -196,8 +228,8 @@ footer {
         background:white;
         flex-direction:column;
         padding:25px;
-        border-radius:25px;
         display:none;
+        border-radius:20px;
         text-align:center;
     }
 
@@ -208,7 +240,11 @@ footer {
     }
 
     .image-container {
-        height:250px;
+        height:280px;
+    }
+
+    .gallery-header h1 {
+        font-size:30px;
     }
 
     .footer-container {
@@ -221,7 +257,6 @@ footer {
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
     <a href="index.html" class="logo">
         <img src="logo-image.png" class="logo-img">
@@ -240,53 +275,94 @@ footer {
     </div>
 </nav>
 
-<!-- HEADER -->
+<main>
+
 <section class="gallery-header">
     <h1>Master Plumbing Solutions</h1>
-    <p>Reliable plumbing services and installations.</p>
+    <p>Reliable water systems and precision installations from SM Trading.</p>
 </section>
 
-<!-- GALLERY -->
 <section class="transformation-container">
 
+    <!-- PROJECT 1 -->
     <div class="comparison-row">
-        <h3 class="project-title">Sanitary Installation</h3>
+        <h3 class="project-title">1. Sanitary Installation</h3>
 
         <div class="image-pair-grid">
-
-            <div class="work-card">
+            <article class="work-card">
+                <span class="status-label before-label">Before</span>
                 <div class="image-container">
                     <img src="images/bathroom_before.jpg">
                 </div>
                 <div class="card-info">
-                    <h4>Before</h4>
-                    <p>Preparation phase.</p>
+                    <h4>Preparation</h4>
+                    <p>Planning layout and structure for durability.</p>
                 </div>
-            </div>
+            </article>
 
-            <div class="work-card">
+            <article class="work-card">
+                <span class="status-label after-label">After</span>
                 <div class="image-container">
                     <img src="images/bathroom_after.jpg">
                 </div>
                 <div class="card-info">
-                    <h4>After</h4>
-                    <p>Completed installation.</p>
+                    <h4>Final Installation</h4>
+                    <p>Modern fixtures with clean finishes.</p>
                 </div>
-            </div>
+            </article>
+        </div>
+    </div>
 
+    <!-- PROJECT 2 -->
+    <div class="comparison-row">
+        <h3 class="project-title">2. Drainage Systems</h3>
+
+        <div class="image-pair-grid">
+            <article class="work-card">
+                <span class="status-label before-label">Before</span>
+                <div class="image-container">
+                    <img src="images/tap_before.jpg">
+                </div>
+                <div class="card-info">
+                    <h4>Pipe Installation</h4>
+                    <p>High-quality piping setup.</p>
+                </div>
+            </article>
+
+            <article class="work-card">
+                <span class="status-label after-label">After</span>
+                <div class="image-container">
+                    <img src="images/tap_after.jpg">
+                </div>
+                <div class="card-info">
+                    <h4>Completed System</h4>
+                    <p>Reliable and durable drainage system.</p>
+                </div>
+            </article>
         </div>
     </div>
 
 </section>
 
-<!-- FOOTER -->
+</main>
+
 <footer>
     <div class="footer-container">
+        <div class="logo">
+            <img src="logo-image.png" class="logo-img">
+            <span style="color: var(--accent)">SM Trading</span>
+        </div>
+
         <p>© 2026 SM Trading</p>
+
+        <div class="footer-socials">
+            <a href="#"><i class="fa-solid fa-phone"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
     </div>
 </footer>
 
-<!-- MOBILE MENU SCRIPT -->
 <script>
 const menuToggle = document.getElementById('mobile-menu');
 const navList = document.getElementById('nav-list');

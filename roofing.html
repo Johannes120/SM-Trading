@@ -162,6 +162,34 @@ body {
 .card-info {
     padding: 25px;
 }
+/* --- FOOTER --- */
+        footer {
+            background: #163a32;
+            color: var(--text-light);
+            padding: 60px 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-socials { display: flex; gap: 20px; }
+        .footer-socials a {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--accent);
+            width: 50px; height: 50px;
+            display: flex; justify-content: center; align-items: center;
+            border-radius: 50%; border: 1px solid rgba(203, 191, 166, 0.2);
+            transition: 0.3s; font-size: 22px; text-decoration: none;
+        }
+
+        .footer-socials a:hover { background: var(--accent); color: var(--primary-dark); transform: translateY(-5px); }
 
 
 
@@ -204,7 +232,7 @@ body {
     .gallery-header h1 {
         font-size: 30px;
     }
-
+.footer-container { flex-direction: column; text-align: center; }
     
 }
 </style>

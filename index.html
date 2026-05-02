@@ -1,10 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- =========================
+         BASIC SEO
+    ========================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SM Trading | Home Page</title>
+
+    <title>SM Trading | Carpentry, Plumbing, Roofing & Maintenance Services South Africa</title>
+
+    <meta name="description" content="SM Trading provides professional carpentry, tiling, plumbing, roofing, painting, sanitary and maintenance services across South Africa. Contact us today for reliable residential and commercial solutions.">
+
+    <meta name="keywords" content="SM Trading, carpentry services, plumbing services, roofing contractors, painting services, tiling experts, maintenance services South Africa">
+
+    <meta name="author" content="SM Trading">
+
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.smtrading.co.za/">
+
+    <!-- =========================
+         OPEN GRAPH / SOCIAL SEO
+    ========================== -->
+    <meta property="og:title" content="SM Trading | Professional Maintenance & Installation Services">
+    <meta property="og:description" content="Trusted carpentry, plumbing, roofing, painting, tiling and maintenance services across South Africa.">
+    <meta property="og:image" content="https://www.smtrading.co.za/logo-image.png">
+    <meta property="og:url" content="https://www.smtrading.co.za/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SM Trading">
+    <meta name="twitter:description" content="Professional installation and maintenance services across South Africa.">
+    <meta name="twitter:image" content="https://www.smtrading.co.za/logo-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- =========================
+         STRUCTURED DATA
+    ========================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "SM Trading",
+      "image": "https://www.smtrading.co.za/logo-image.png",
+      "url": "https://www.smtrading.co.za/",
+      "telephone": "+27 63 366 2077",
+      "email": "smtradingbt@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ZA"
+      },
+      "description": "Professional carpentry, plumbing, roofing, tiling and maintenance services in South Africa.",
+      "sameAs": [
+        "https://wa.me/27633662077"
+      ]
+    }
+    </script>
+
     <style>
         :root {
             --primary-dark: #1F4D43;
@@ -13,7 +75,7 @@
             --light: #F5F1E8;
             --text-dark: #1A1A1A;
             --text-light: #FFFFFF;
-            --glass: rgba(203, 191, 166, 0.95); /* Increased opacity for better mobile readability */
+            --glass: rgba(203, 191, 166, 0.95);
         }
 
         * {
@@ -23,16 +85,20 @@
             font-family: 'Segoe UI', Roboto, sans-serif;
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             background: var(--light);
             color: var(--text-dark);
-            padding-top: 120px; 
+            padding-top: 120px;
             overflow-x: hidden;
         }
 
-        /* --- NAVBAR --- */
+        /* =========================
+           NAVBAR
+        ========================== */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -83,7 +149,10 @@
             transition: 0.3s;
         }
 
-        /* Mobile Menu Toggle */
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
         .menu-toggle {
             display: none;
             font-size: 24px;
@@ -91,18 +160,22 @@
             cursor: pointer;
         }
 
-        /* --- HERO BANNER --- */
+        /* =========================
+           HERO BANNER
+        ========================== */
         .hero-banner {
             min-height: 600px;
             max-width: 1200px;
             width: calc(100% - 40px);
-            margin: 0 auto 30px auto; 
-            background: url('business-image.jpg') center/cover no-repeat;
+            margin: 0 auto 30px auto;
+            background: url('sm-trading-maintenance-services.webp') center/cover no-repeat;
             border-radius: 40px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        /* --- HERO INTRO --- */
+        /* =========================
+           HERO INTRO
+        ========================== */
         .hero-intro {
             display: flex;
             justify-content: center;
@@ -123,22 +196,24 @@
             font-size: 42px;
             color: var(--primary-dark);
             margin-bottom: 20px;
-            line-height: 1.1;
+            line-height: 1.2;
         }
 
         .intro-card p {
             font-size: 18px;
             color: #444;
             margin-bottom: 35px;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        /* --- STATS --- */
+        /* =========================
+           STATS
+        ========================== */
         .stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             max-width: 1100px;
-            margin: 0 auto 60px auto; 
+            margin: 0 auto 60px auto;
             background: var(--primary-dark);
             padding: 40px;
             border-radius: 30px;
@@ -146,10 +221,23 @@
             gap: 20px;
         }
 
-        .stat-item h3 { font-size: 32px; color: var(--accent); margin-bottom: 5px; }
-        .stat-item p { color: white; font-weight: 500; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; }
+        .stat-item h3 {
+            font-size: 32px;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
 
-        /* --- SERVICES --- */
+        .stat-item p {
+            color: white;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        /* =========================
+           SERVICES
+        ========================== */
         .services {
             padding: 40px 20px 80px 20px;
             text-align: center;
@@ -158,13 +246,21 @@
         .services h2 {
             font-size: 32px;
             color: var(--primary-dark);
-            margin-bottom: 40px;
+            margin-bottom: 20px;
+        }
+
+        .services-text {
+            max-width: 850px;
+            margin: 0 auto 40px auto;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555;
         }
 
         .service-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 25px; 
+            gap: 25px;
             max-width: 1200px;
             margin: auto;
         }
@@ -177,24 +273,49 @@
             border: 1px solid rgba(0,0,0,0.03);
         }
 
-        .service-card a { text-decoration: none; color: inherit; display: block; }
-        .service-card i { font-size: 40px; color: var(--primary); margin-bottom: 20px; }
-        .service-card span { display: block; font-size: 17px; font-weight: 700; color: var(--primary-dark); }
+        .service-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .service-card i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-card span {
+            display: block;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
 
         .service-card:hover {
             background: var(--primary-dark);
             transform: translateY(-10px);
         }
 
-        .service-card:hover i, .service-card:hover span { color: var(--accent); }
+        .service-card:hover i,
+        .service-card:hover span {
+            color: var(--accent);
+        }
 
-        /* --- CTA --- */
+        /* =========================
+           CTA
+        ========================== */
         .cta {
             background: var(--primary-dark);
             color: white;
             padding: 80px 20px;
             text-align: center;
             border-radius: 50px 50px 0 0;
+        }
+
+        .cta h2 {
+            margin-bottom: 20px;
+            font-size: 34px;
         }
 
         .btn-main {
@@ -208,9 +329,18 @@
             transition: 0.3s ease;
         }
 
-        .btn-accent { background: var(--accent); color: var(--primary-dark); }
+        .btn-main:hover {
+            transform: translateY(-3px);
+        }
 
-        /* --- FOOTER --- */
+        .btn-accent {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
         footer {
             background: #122b25;
             color: var(--text-light);
@@ -227,29 +357,48 @@
             gap: 20px;
         }
 
-        .footer-socials { display: flex; gap: 15px; }
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+        }
+
         .footer-socials a {
-            width: 45px; height: 45px;
+            width: 45px;
+            height: 45px;
             background: rgba(255,255,255,0.05);
             color: var(--accent);
-            display: flex; justify-content: center; align-items: center;
-            border-radius: 50%; text-decoration: none;
-            font-size: 20px; border: 1px solid rgba(203, 191, 166, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 20px;
+            border: 1px solid rgba(203, 191, 166, 0.1);
         }
 
-        /* --- RESPONSIVE QUERIES --- */
+        /* =========================
+           RESPONSIVE
+        ========================== */
 
-        /* Tablets */
         @media (max-width: 1024px) {
-            .service-grid { grid-template-columns: repeat(2, 1fr); }
-            .hero-banner { min-height: 450px; }
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-banner {
+                min-height: 450px;
+            }
         }
 
-        /* Mobile Devices */
         @media (max-width: 768px) {
-            body { padding-top: 100px; }
 
-            .menu-toggle { display: block; }
+            body {
+                padding-top: 100px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
 
             .nav-links {
                 position: absolute;
@@ -261,126 +410,309 @@
                 padding: 30px;
                 border-radius: 30px;
                 box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                display: none; /* Hidden by default */
+                display: none;
                 text-align: center;
             }
 
-            .nav-links.active { display: flex; }
+            .nav-links.active {
+                display: flex;
+            }
 
-            .hero-banner { min-height: 300px; border-radius: 25px; }
-            
-            .intro-card h1 { font-size: 28px; }
-            .intro-card p { font-size: 16px; }
+            .hero-banner {
+                min-height: 300px;
+                border-radius: 25px;
+            }
 
-            .stats { 
-                grid-template-columns: 1fr; 
+            .intro-card h1 {
+                font-size: 30px;
+            }
+
+            .intro-card p {
+                font-size: 16px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
                 padding: 30px;
                 margin: 0 20px 40px 20px;
             }
 
-            .service-grid { grid-template-columns: 1fr; gap: 20px; }
+            .service-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
 
-            .footer-container { flex-direction: column; text-align: center; }
-            
-            .logo span { font-size: 18px; }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo span {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<nav class="navbar">
-    <a href="#" class="logo">
-        <img src="logo-image.png" alt="Logo" class="logo-img">
-        <span>SM Trading</span>
-    </a>
-    <div class="menu-toggle" id="mobile-menu">
-        <i class="fa-solid fa-bars"></i>
-    </div>
-    <div class="nav-links" id="nav-list">
-        <a href="index.html">Home</a>
-        <a href="aboutus.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-    </div>
-</nav>
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+    <nav class="navbar" aria-label="Main Navigation">
 
-<section class="hero-banner"></section>
+        <a href="index.html" class="logo" aria-label="SM Trading Home Page">
+            <img 
+                src="logo-image.png" 
+                alt="SM Trading company logo"
+                class="logo-img"
+                loading="lazy"
+            >
+            <span>SM Trading</span>
+        </a>
 
-<section class="stats">
-    <div class="stat-item">
-        <h3>25+</h3>
-        <p>Successful Projects</p>
-    </div>
-    <div class="stat-item">
-        <h3>10+</h3>
-        <p>Years Experience</p>
-    </div>
-    <div class="stat-item">
-        <h3>100%</h3>
-        <p>Client Satisfaction</p>
-    </div>
-</section>
-
-<section class="hero-intro">
-    <div class="intro-card">
-        <h1>Crafting Excellence in Every Installation</h1>
-        <p>We transform spaces across South Africa with premium maintenance, carpentry, and tiling services you can rely on.</p>
-        <a href="contact.html" class="btn-main">Request Free Quote</a>
-    </div>
-</section>
-
-<section id="services" class="services">
-    <h2>Specialized Solutions</h2>
-    <div class="service-grid">
-        <div class="service-card"><a href="carpentry.html"><i class="fa-solid fa-hammer"></i><span>Carpentry</span></a></div>
-        <div class="service-card"><a href="tiling.html"><i class="fa-solid fa-border-all"></i><span>Tiling</span></a></div>
-        <div class="service-card"><a href="painting.html"><i class="fa-solid fa-paint-roller"></i><span>Painting</span></a></div>
-        <div class="service-card"><a href="plumbing.html"><i class="fa-solid fa-faucet-drip"></i><span>Plumbing</span></a></div>
-        <div class="service-card"><a href="maintanance.html"><i class="fa-solid fa-screwdriver-wrench"></i><span>Maintenance</span></a></div>
-        <div class="service-card"><a href="roofing.html"><i class="fa-solid fa-house-chimney"></i><span>Roofing</span></a></div>
-        <div class="service-card"><a href="cleaning.html"><i class="fa-solid fa-broom"></i><span>Cleaning</span></a></div>
-        <div class="service-card"><a href="sanitary.html"><i class="fa-solid fa-toilet"></i><span>Sanitary</span></a></div>
-    </div>
-</section>
-
-<section class="cta">
-    <h2 style="margin-bottom: 20px;">Ready to transform your space?</h2>
-    <a href="contact.html" class="btn-main btn-accent">Get In Touch Now</a>
-</section>
-
-<footer>
-    <div class="footer-container">
-        <div class="logo">
-            <img src="logo-image.png" alt="Logo" class="logo-img">
-            <span style="color: var(--accent)">SM Trading</span>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
         </div>
-        <div class="footer-bottom">
-            © 2022 SM Trading. All rights reserved.
+
+        <div class="nav-links" id="nav-list">
+            <a href="index.html" title="SM Trading Home">Home</a>
+            <a href="aboutus.html" title="About SM Trading">About</a>
+            <a href="services.html" title="SM Trading Services">Services</a>
+            <a href="contact.html" title="Contact SM Trading">Contact</a>
         </div>
-        <div class="footer-socials">
-            <a href="tel:+27633662077"><i class="fa-solid fa-phone"></i></a>
-            <a href="mailto:smtradingbt@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-            <a href="https://wa.me/27633662077"><i class="fa-brands fa-whatsapp"></i></a>
+
+    </nav>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+    <header class="hero-banner" role="banner"></header>
+
+    <main>
+
+        <!-- =========================
+             STATS
+        ========================== -->
+        <section class="stats">
+
+            <div class="stat-item">
+                <h3>25+</h3>
+                <p>Successful Projects</p>
+            </div>
+
+            <div class="stat-item">
+                <h3>10+</h3>
+                <p>Years Experience</p>
+            </div>
+
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Client Satisfaction</p>
+            </div>
+
+        </section>
+
+        <!-- =========================
+             INTRO
+        ========================== -->
+        <section class="hero-intro">
+
+            <div class="intro-card">
+
+                <h1>
+                    Professional Carpentry, Plumbing & Maintenance Services in South Africa
+                </h1>
+
+                <p>
+                    SM Trading delivers trusted carpentry, tiling, roofing, painting, sanitary,
+                    plumbing and maintenance services for residential and commercial properties
+                    across South Africa.
+                </p>
+
+                <a 
+                    href="contact.html"
+                    class="btn-main"
+                    aria-label="Request a free quote from SM Trading"
+                >
+                    Request Free Quote
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             SERVICES
+        ========================== -->
+        <section id="services" class="services">
+
+            <h2>Our Professional Maintenance & Installation Services</h2>
+
+            <p class="services-text">
+                SM Trading offers reliable carpentry, tiling, roofing, plumbing,
+                painting and maintenance services for residential and commercial
+                properties across South Africa.
+            </p>
+
+            <div class="service-grid">
+
+                <div class="service-card">
+                    <a href="carpentry.html" title="Professional Carpentry Services">
+                        <i class="fa-solid fa-hammer"></i>
+                        <span>Carpentry</span>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <a href="tiling.html" title="Professional Tiling Services">
+                        <i class="fa-solid fa-border-all"></i>
+                        <span>Tiling</span>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <a href="painting.html" title="Professional Painting Services">
+                        <i class="fa-solid fa-paint-roller"></i>
+                        <span>Painting</span>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <a href="plumbing.html" title="Professional Plumbing Services">
+                        <i class="fa-solid fa-faucet-drip"></i>
+                        <span>Plumbing</span>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <a href="maintenance.html" title="Building Maintenance Services">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        <span>Maintenance</span>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <a href="roofing.html" title="Professional Roofing Services">
+                        <i class="fa-solid fa-house-chimney"></i>
+                        <span>Roofing</span>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <a href="cleaning.html" title="Cleaning Services">
+                        <i class="fa-solid fa-broom"></i>
+                        <span>Cleaning</span>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <a href="sanitary.html" title="Sanitary Installation Services">
+                        <i class="fa-solid fa-toilet"></i>
+                        <span>Sanitary</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             CTA
+        ========================== -->
+        <section class="cta">
+
+            <h2>Ready to transform your space?</h2>
+
+            <a 
+                href="contact.html"
+                class="btn-main btn-accent"
+                aria-label="Contact SM Trading now"
+            >
+                Get In Touch Now
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="logo">
+
+                <img 
+                    src="logo-image.png"
+                    alt="SM Trading company logo"
+                    class="logo-img"
+                    loading="lazy"
+                >
+
+                <span style="color: var(--accent)">
+                    SM Trading
+                </span>
+
+            </div>
+
+            <div class="footer-bottom">
+                © 2026 SM Trading. All rights reserved.
+            </div>
+
+            <div class="footer-socials">
+
+                <a 
+                    href="tel:+27633662077"
+                    aria-label="Call SM Trading"
+                >
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+
+                <a 
+                    href="mailto:smtradingbt@gmail.com"
+                    aria-label="Email SM Trading"
+                >
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+
+                <a 
+                    href="https://wa.me/27633662077"
+                    aria-label="WhatsApp SM Trading"
+                    target="_blank"
+                >
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+            </div>
+
         </div>
-    </div>
-</footer>
 
-<script>
-    // Logic for Mobile Menu Toggle
-    const menuToggle = document.getElementById('mobile-menu');
-    const navList = document.getElementById('nav-list');
+    </footer>
 
-    menuToggle.addEventListener('click', () => {
-        navList.classList.toggle('active');
-    });
+    <!-- =========================
+         MOBILE MENU SCRIPT
+    ========================== -->
+    <script>
 
-    // Close menu when a link is clicked
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navList.classList.remove('active');
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
         });
-    });
-</script>
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+            });
+
+        });
+
+    </script>
 
 </body>
 </html>

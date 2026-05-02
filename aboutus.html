@@ -3,7 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SM Trading | About Us</title>
+
+    <title>About SM Trading | Trusted Construction & Maintenance Company in South Africa</title>
+
+    <!-- SEO META -->
+    <meta name="description" content="Learn about SM Trading, a trusted South African construction and maintenance company specializing in carpentry, plumbing, tiling, and cleaning services.">
+    <meta name="keywords" content="SM Trading about, construction company South Africa, carpentry services, plumbing company, tiling contractors, home maintenance Johannesburg">
+    <meta name="author" content="SM Trading">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourdomain.co.za/aboutus.html">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="About SM Trading | Construction & Maintenance Experts">
+    <meta property="og:description" content="Discover SM Trading, a reliable construction and maintenance company in South Africa. Quality workmanship you can trust.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.co.za/aboutus.html">
+    <meta property="og:image" content="https://yourdomain.co.za/images/preview.jpg">
+
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About SM Trading">
+    <meta name="twitter:description" content="Trusted construction and maintenance services in South Africa.">
+    <meta name="twitter:image" content="https://yourdomain.co.za/images/preview.jpg">
+
+    <!-- STRUCTURED DATA (LOCAL BUSINESS) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "SM Trading",
+      "description": "Construction and maintenance services including carpentry, plumbing, tiling and cleaning in South Africa.",
+      "url": "https://yourdomain.co.za",
+      "telephone": "+27 63 366 2077",
+      "email": "smtradingbt@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ZA"
+      },
+      "areaServed": "South Africa",
+      "serviceType": [
+        "Carpentry",
+        "Plumbing",
+        "Tiling",
+        "Cleaning Services"
+      ]
+    }
+    </script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -17,7 +63,6 @@
             --glass: rgba(203, 191, 166, 0.95);
         }
 
-        /* RESET */
         * {
             margin: 0;
             padding: 0;
@@ -34,7 +79,7 @@
             overflow-x: hidden;
         }
 
-        /* --- NAVBAR --- */
+        /* NAVBAR */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -47,10 +92,8 @@
             z-index: 1000;
             background: var(--glass);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border-radius: 50px;
             border: 1px solid rgba(255,255,255,0.3);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .logo {
@@ -60,18 +103,7 @@
             text-decoration: none;
         }
 
-        .logo-img {
-            height: 45px;
-            width: auto;
-            border-radius: 30px;
-            object-fit: contain;
-        }
-
-        .logo span {
-            font-size: 20px;
-            font-weight: bold;
-            color: var(--primary-dark);
-        }
+        .logo-img { height: 45px; border-radius: 30px; }
 
         .nav-links {
             display: flex;
@@ -82,216 +114,138 @@
             text-decoration: none;
             color: var(--primary-dark);
             font-weight: 600;
-            font-size: 15px;
-            transition: 0.3s;
         }
 
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            color: var(--primary-dark);
-            cursor: pointer;
-        }
+        .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
 
-        /* --- HERO SECTION --- */
+        /* HERO */
         .hero {
-            min-height: 400px;
             max-width: 1100px;
-            width: calc(100% - 40px);
-            margin: 0 auto 40px auto;
-            background: linear-gradient(135deg, var(--accent), #d8cfbd);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin: auto;
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
             border-radius: 30px;
+            background: linear-gradient(135deg, var(--accent), #d8cfbd);
         }
 
-        .hero-content h1 {
+        .hero h1 {
             font-size: 42px;
-            margin-bottom: 15px;
             color: var(--primary-dark);
-            line-height: 1.2;
         }
 
-        .hero-content p {
+        .hero p {
+            margin-top: 10px;
             font-size: 18px;
-            color: #2f2f2f;
-            line-height: 1.6;
-            margin-bottom: 25px;
         }
 
-        .btn-quote {
-            padding: 14px 30px;
-            background: var(--primary-dark);
-            color: white;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            transition: 0.3s;
-        }
-
-        /* --- ABOUT SECTION --- */
+        /* ABOUT */
         .about {
             max-width: 900px;
-            width: calc(100% - 40px);
             margin: 60px auto;
             padding: 60px 30px;
             background: var(--primary-dark);
             border-radius: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            align-items: center;
             text-align: center;
         }
 
         .about img {
-            width: 300px; 
-            height: 300px;
+            width: 280px;
+            height: 280px;
             border-radius: 50%;
-            border: 8px solid var(--accent);
+            border: 6px solid var(--accent);
             object-fit: cover;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
-        .about-text h2 {
+        .about h2 {
             color: var(--accent);
-            margin-bottom: 15px;
-            font-size: 32px;
+            margin-top: 20px;
         }
 
-        .about-text p {
+        .about p {
             color: white;
-            font-size: 16px;
             line-height: 1.8;
-            max-width: 700px;
+            margin-top: 15px;
         }
 
-        /* --- WHY CHOOSE US SECTION --- */
+        /* WHY SECTION */
         .why-us {
-            padding: 80px 20px;
             max-width: 1100px;
             margin: auto;
+            padding: 80px 20px;
             text-align: center;
         }
 
         .why-us h2 {
-            font-size: 36px;
+            font-size: 34px;
             color: var(--primary-dark);
-            margin-bottom: 40px;
         }
 
         .why-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .why-card {
-            padding: 40px 25px;
             background: white;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: 0.3s;
-        }
-
-        .why-card:hover {
-            transform: translateY(-5px);
+            padding: 35px;
+            border-radius: 20px;
         }
 
         .why-card i {
-            font-size: 40px;
+            font-size: 35px;
             color: var(--primary);
-            margin-bottom: 20px;
         }
 
-        .why-card h3 {
-            color: var(--primary-dark);
-            margin-bottom: 15px;
-        }
-
-        .why-card p {
-            font-size: 15px;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        /* --- CORE VALUES STRIP --- */
+        /* VALUES */
         .values-banner {
             background: var(--accent);
+            text-align: center;
             padding: 60px 20px;
-            margin: 40px 0;
         }
 
         .values-container {
-            max-width: 1100px;
-            margin: auto;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            gap: 20px;
         }
 
-        .value-item h4 {
-            font-size: 24px;
-            color: var(--primary-dark);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .values-container h4 {
+            font-size: 22px;
             font-weight: 800;
+            color: var(--primary-dark);
         }
 
-        /* --- FOOTER --- */
+        /* FOOTER */
         footer {
             background: #163a32;
-            color: var(--text-light);
+            color: white;
             padding: 40px 20px;
         }
 
         .footer-container {
             display: flex;
             justify-content: space-between;
-            align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
             max-width: 1100px;
             margin: auto;
         }
 
-        .footer-socials { display: flex; gap: 15px; }
-        .footer-socials a {
-            width: 45px; height: 45px;
-            background: rgba(255,255,255,0.05);
-            color: var(--accent);
-            display: flex; justify-content: center; align-items: center;
-            border-radius: 50%; text-decoration: none;
-            font-size: 20px; border: 1px solid rgba(203, 191, 166, 0.1);
-        }
-
-        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            body { padding-top: 100px; }
-            .menu-toggle { display: block; }
+            .why-grid { grid-template-columns: 1fr; }
             .nav-links {
-                position: absolute;
-                top: 80px; left: 0; right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 30px;
-                border-radius: 25px;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
                 display: none;
-                text-align: center;
+                flex-direction: column;
+                background: white;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                padding: 20px;
             }
             .nav-links.active { display: flex; }
-            .hero { min-height: 350px; }
-            .hero-content h1 { font-size: 30px; }
-            .about { padding: 40px 20px; }
-            .about img { width: 220px; height: 220px; }
-            .why-grid { grid-template-columns: 1fr; }
-            .footer-container { flex-direction: column; text-align: center; }
+            .menu-toggle { display: block; }
         }
     </style>
 </head>
@@ -303,33 +257,31 @@
         <img src="logo-image.png" alt="SM Trading Logo" class="logo-img">
         <span>SM Trading</span>
     </a>
+
     <div class="menu-toggle" id="mobile-menu">
         <i class="fa-solid fa-bars"></i>
     </div>
+
     <div class="nav-links" id="nav-list">
         <a href="index.html">Home</a>
-        <a href="aboutus.html">About</a>
+        <a href="aboutus.html">About SM Trading</a>
         <a href="services.html">Services</a>
         <a href="contact.html">Contact</a>
     </div>
 </nav>
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>Reliable Services You Can Trust</h1>
-        <p>Beyond the basics — SM Trading delivers quality workmanship with integrity.</p>
-        <a href="contact.html" class="btn-quote">Get A Quote</a>
-    </div>
-</section>
+<header class="hero">
+    <h1>Trusted Construction & Maintenance Company in South Africa</h1>
+    <p>We deliver reliable carpentry, plumbing, tiling, and cleaning services with professionalism and integrity.</p>
+</header>
 
-<section id="about" class="about">
-    <img src="images/about-us.jpg" alt="About SM Trading" />
-    <div class="about-text">
-        <h2>Our Story</h2>
-        <p>
-            At SM Trading, we believe that every home and business deserves maintenance and repairs that stand the test of time. Starting in Johannesburg, we've built our reputation on the simple promise of doing the job right the first time. Our team combines technical expertise with a commitment to clean, efficient, and professional service.
-        </p>
-    </div>
+<section class="about">
+    <img src="images/about-us.jpg" alt="SM Trading team construction work South Africa" loading="lazy">
+    <h2>Our Story</h2>
+    <p>
+        SM Trading was founded with a mission to provide reliable and high-quality construction services.
+        We are committed to excellence, safety, and customer satisfaction across all projects.
+    </p>
 </section>
 
 <section class="why-us">
@@ -337,63 +289,41 @@
     <div class="why-grid">
         <div class="why-card">
             <i class="fa-solid fa-award"></i>
-            <h3>Quality Workmanship</h3>
-            <p>We don't cut corners. Whether it's a small repair or a major project, we use premium materials and expert techniques to ensure lasting results.</p>
+            <h3>Quality Work</h3>
+            <p>We deliver durable and professional workmanship.</p>
         </div>
         <div class="why-card">
-            <i class="fa-solid fa-clock-check"></i>
-            <h3>Reliable Timing</h3>
-            <p>Your time is valuable. We pride ourselves on showing up as scheduled and completing our projects within the agreed-upon timeframe.</p>
+            <i class="fa-solid fa-clock"></i>
+            <h3>On-Time Delivery</h3>
+            <p>We respect deadlines and always deliver on schedule.</p>
         </div>
         <div class="why-card">
             <i class="fa-solid fa-handshake"></i>
-            <h3>Honest Pricing</h3>
-            <p>No hidden fees or unexpected costs. We provide clear, transparent quotes so you know exactly what to expect from the start.</p>
+            <h3>Trusted Service</h3>
+            <p>Transparent pricing and honest communication always.</p>
         </div>
     </div>
 </section>
 
 <section class="values-banner">
     <div class="values-container">
-        <div class="value-item"><h4>Integrity</h4></div>
-        <div class="value-item"><h4>Excellence</h4></div>
-        <div class="value-item"><h4>Professionalism</h4></div>
+        <h4>Integrity</h4>
+        <h4>Excellence</h4>
+        <h4>Reliability</h4>
     </div>
-</section>
-
-<section class="cta" style="background: var(--primary-dark); color: white; text-align: center; padding: 80px 20px;">
-    <h2>Need Professional Help?</h2>
-    <p style="margin: 15px 0 25px 0; opacity: 0.9;">Contact SM Trading today and get a free quote!</p>
-    <a href="contact.html" class="btn-quote" style="background: var(--accent); color: var(--primary-dark);">Contact Us</a>
 </section>
 
 <footer>
     <div class="footer-container">
-        <div class="footer-logo">
-            <img src="logo-image.png" alt="SM Trading Logo" class="logo-img" style="height: 35px;">
-            <span style="color: var(--accent); margin-left: 10px; font-weight: bold;">SM Trading</span>
-        </div>
-        <div class="footer-bottom">© 2022 SM Trading. All rights reserved.</div>
-        <div class="footer-socials">
-            <a href="tel:+27633662077"><i class="fa-solid fa-phone"></i></a>
-            <a href="mailto:smtradingbt@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-            <a href="https://wa.me/27633662077"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
+        <div>© 2026 SM Trading</div>
     </div>
 </footer>
 
 <script>
     const menuToggle = document.getElementById('mobile-menu');
     const navList = document.getElementById('nav-list');
-
     menuToggle.addEventListener('click', () => {
         navList.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navList.classList.remove('active');
-        });
     });
 </script>
 
